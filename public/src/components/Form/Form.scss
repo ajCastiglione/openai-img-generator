@@ -1,0 +1,45 @@
+/* Showcase */
+.showcase {
+  height: 450px;
+  width: 100%;
+  background: var(--primary-color);
+
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    input,
+    select {
+      font-size: 20px;
+      width: 500px;
+      max-width: 500px;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+    button {
+      font-size: 20px;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 20px;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
