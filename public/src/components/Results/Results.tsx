@@ -1,11 +1,14 @@
+import { ResultProps } from "../../types/Result.interface";
 import "./Results.scss";
 
-function Results() {
+function Results(props: ResultProps) {
+  const { imgUrl, alt, msg } = props;
+
   return (
     <section className="image">
       <div className="image-container">
-        <h2 className="msg"></h2>
-        <img src="" alt="" id="image" />
+        <h2 className="msg">{msg}</h2>
+        <img src={imgUrl} alt={alt} id="image" />
       </div>
     </section>
   );
