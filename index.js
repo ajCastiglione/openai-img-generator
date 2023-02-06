@@ -2,8 +2,16 @@ const path = require("path");
 const express = require("express");
 require("dotenv").config();
 const port = process.env.PORT || 5000;
+const cors = require("cors");
 
 const app = express();
+
+// Enable CORS.
+app.use(
+  cors({
+    origin: "*", // Allow all origins.
+  })
+);
 
 // Enable body parser.
 app.use(express.json());
