@@ -6,4 +6,5 @@ export default {
   moduleNameMapper: {
     "\\.(css|scss)$": "identity-obj-proxy",
   },
+  setupFilesAfterEnv: ["./setupTest.js"],
 };

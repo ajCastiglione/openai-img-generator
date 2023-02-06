@@ -7,8 +7,18 @@ function Results(props: ResultProps) {
   return (
     <section className="image" data-testid="results">
       <div className="image-container">
-        {msg && <h2 className="msg">{msg}</h2>}
-        {imgUrl && <img src={imgUrl} alt="OpenAI Generated Image" id="image" />}
+        {msg && (
+          <h2 className="msg" data-testid="errorMessage">
+            {msg}
+          </h2>
+        )}
+        {imgUrl && (
+          <img
+            src={imgUrl}
+            alt="OpenAI Generated Image"
+            data-testid="generatedImage"
+          />
+        )}
       </div>
     </section>
   );

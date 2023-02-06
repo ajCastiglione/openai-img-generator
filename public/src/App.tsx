@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Header, Form, Results, Spinner } from "./components";
+import { FetchData } from "./types/App.types";
 import "./App.scss";
 
 function App() {
@@ -25,7 +26,11 @@ function App() {
         throw new Error("That image could not be generated");
       }
 
-      const data = await res.json();
+      const data: FetchData = await res.json();
+
+      if (!data.success) {
+        throw new Error("That image could not be generated");
+      }
 
       setImgUrl(data.data);
       setLoading(false);
