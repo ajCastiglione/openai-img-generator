@@ -1,5 +1,5 @@
 export interface ResultProps {
   imgUrl: string;
-  alt: string;
-  msg: string;
+  alt?: string;
+  msg?: string;
 }

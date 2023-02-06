@@ -20,6 +20,16 @@ body {
   background: #f4f4f4;
 }
 
+.error {
+  background: #f00;
+  color: #fff;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 18px;
+}
+
 /* Image */
 img {
   display: block;
