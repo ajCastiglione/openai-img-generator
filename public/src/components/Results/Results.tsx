@@ -5,7 +5,7 @@ function Results(props: ResultProps) {
   const { imgUrl, msg } = props;
 
   return (
-    <section className="image">
+    <section className="image" data-testid="results">
       <div className="image-container">
         {msg && <h2 className="msg">{msg}</h2>}
         {imgUrl && <img src={imgUrl} alt="OpenAI Generated Image" id="image" />}

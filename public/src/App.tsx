@@ -11,7 +11,7 @@ function App() {
     setLoading(true);
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/openai/generate-image`,
+        `${process.env.VITE_API_URL}/openai/generate-image`,
         {
           method: "POST",
           headers: {

@@ -30,12 +30,13 @@ function Form(props: FormProps) {
 
   return (
     <section className="showcase">
-      <form id="image-form">
+      <form data-testid="image-form">
         <h1>Describe An Image</h1>
         {err && <p className="error">{err}</p>}
         <div className="form-control">
           <input
             type="text"
+            name="prompt"
             placeholder="Enter Text"
             onChange={handleInput}
             value={prompt}
