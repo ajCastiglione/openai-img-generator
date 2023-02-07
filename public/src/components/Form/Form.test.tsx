@@ -15,14 +15,14 @@ describe("Form component", () => {
   });
 
   it("renders form with the select, input and submit fields", () => {
-    const { getByText, getByPlaceholderText, getByDisplayValue } = render(
+    const { getByPlaceholderText, getByDisplayValue, getByTestId } = render(
       <Form submit={mockSubmit} />
     );
 
     const selectInput = getByDisplayValue("Medium");
     expect(selectInput).toBeInTheDocument();
 
-    const submitButton = getByText("Generate");
+    const submitButton = getByTestId("submitBtn");
     expect(submitButton).toBeInTheDocument();
 
     const textInput = getByPlaceholderText("Enter Text");

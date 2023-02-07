@@ -49,8 +49,13 @@ function Form(props: FormProps) {
             <option value="large">Large</option>
           </select>
         </div>
-        <button type="submit" className="btn" onClick={handleSubmit}>
-          Generate
+        <button
+          data-testid="submitBtn"
+          type="submit"
+          className="btn"
+          onClick={handleSubmit}
+        >
+          Generate Image
         </button>
       </form>
     </section>
