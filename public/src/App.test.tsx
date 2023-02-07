@@ -20,12 +20,12 @@ describe("App component", () => {
 
   it("sends a request to the API when the form is submitted", async () => {
     fetchMock.mockResponseOnce(JSON.stringify(mockResolvedValue));
-    const { getByText, getByPlaceholderText, getByTestId } = render(<App />);
+    const { getByPlaceholderText, getByTestId } = render(<App />);
 
     const textInput = getByPlaceholderText("Enter Text");
     fireEvent.change(textInput, { target: { value: "test prompt" } });
 
-    const submitButton = getByText("Generate");
+    const submitButton = getByTestId("submitBtn");
     fireEvent.click(submitButton);
 
     await findByTestId(
@@ -42,12 +42,12 @@ describe("App component", () => {
 
   it("renders an error message when the API returns an error", async () => {
     fetchMock.mockResponseOnce(JSON.stringify({ success: false }));
-    const { getByText, getByPlaceholderText, getByTestId } = render(<App />);
+    const { getByPlaceholderText, getByTestId } = render(<App />);
 
     const textInput = getByPlaceholderText("Enter Text");
     fireEvent.change(textInput, { target: { value: "test prompt" } });
 
-    const submitButton = getByText("Generate");
+    const submitButton = getByTestId("submitBtn");
     fireEvent.click(submitButton);
 
     await findByTestId(
