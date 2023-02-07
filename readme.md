@@ -8,7 +8,7 @@ This is a simple example of using OpenAI's DALL-E to generate images from text p
 
 ## Usage
 
-1. Go to `localhost:3000` in your browser
+1. Go to my app [OpenAI Image Generator](https://turquoise-angelfish-shoe.cyclic.app/) in your browser
 2. Enter a text prompt, select an image size, then click "Generate"
 3. Wait for the image to be generated
 
