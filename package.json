@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
+    "start": "cd public && npm i && npm run build && cd .. && node index",
     "dev": "nodemon index"
   },
   "dependencies": {
