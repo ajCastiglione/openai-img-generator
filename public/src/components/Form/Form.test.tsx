@@ -46,7 +46,7 @@ describe("Form component", () => {
   });
 
   it("calls submit function on submit if the input has a value", () => {
-    const { getByText, getByPlaceholderText } = render(
+    const { getByTestId, getByPlaceholderText } = render(
       <Form submit={mockSubmit} />
     );
 
@@ -54,15 +54,15 @@ describe("Form component", () => {
     const textInput = getByPlaceholderText("Enter Text");
     fireEvent.change(textInput, { target: { value: "test prompt" } });
 
-    const submitButton = getByText("Generate");
+    const submitButton = getByTestId("submitBtn");
     fireEvent.click(submitButton);
     expect(mockSubmit).toHaveBeenCalled();
   });
 
   it("does not call submit function on submit if the input is empty", () => {
-    const { getByText } = render(<Form submit={mockSubmit} />);
+    const { getByTestId } = render(<Form submit={mockSubmit} />);
 
-    const submitButton = getByText("Generate");
+    const submitButton = getByTestId("submitBtn");
     fireEvent.click(submitButton);
     expect(mockSubmit).not.toHaveBeenCalled();
   });
