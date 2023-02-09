@@ -1,8 +1,21 @@
+import { useRef } from "react";
 import { ResultProps } from "../../types/Result.interface";
+import { ClipboardIcon } from "../../icons/Icons";
 import "./Results.scss";
 
 function Results(props: ResultProps) {
   const { imgUrl, msg } = props;
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const copyToClipboard = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const input = inputRef.current;
+    if (!input) return;
+    const value = input.value;
+
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(value);
+  };
 
   return (
     <section className="image" data-testid="results">
@@ -13,11 +26,30 @@ function Results(props: ResultProps) {
           </h2>
         )}
         {imgUrl && (
-          <img
-            src={imgUrl}
-            alt="OpenAI Generated Image"
-            data-testid="generatedImage"
-          />
+          <>
+            <img
+              src={imgUrl}
+              alt="OpenAI Generated Image"
+              data-testid="generatedImage"
+            />
+            <div className="input-container">
+              <input
+                data-testid="input"
+                type="text"
+                className="input"
+                value={imgUrl}
+                ref={inputRef}
+                readOnly
+              />
+              <button
+                className="copy-btn"
+                data-testid="copyBtn"
+                onClick={copyToClipboard}
+              >
+                <ClipboardIcon />
+              </button>
+            </div>
+          </>
         )}
       </div>
     </section>

@@ -2,3 +2,39 @@
   width: 100%;
   margin-top: 2rem;
 }
+
+.image-container {
+  .input-container {
+    max-width: 500px;
+    margin: 1rem auto;
+    position: relative;
+
+    .input {
+      display: block;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      padding-right: 60px;
+      font-size: 20px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      padding: 0.25rem 0.5rem;
+      border-left: none;
+      border-width: 2px;
+      border-color: #ccc;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        background: darken(#ccc, 10%);
+      }
+    }
+  }
+}
