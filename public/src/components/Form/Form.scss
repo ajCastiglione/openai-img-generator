@@ -18,15 +18,20 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
+    .form-control {
+      width: 100%;
+      padding: 0 0.5rem;
+    }
     input,
     select {
+      display: block;
       font-size: 20px;
       width: 500px;
-      max-width: 500px;
+      max-width: 100%;
       padding: 1rem;
       border: 1px solid #ccc;
       border-radius: 5px;
-      margin-bottom: 1rem;
+      margin: 0 auto 1rem;
     }
     button {
       font-size: 20px;
