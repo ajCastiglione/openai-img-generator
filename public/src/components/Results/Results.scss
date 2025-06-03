@@ -1,6 +1,13 @@
+@use "sass:color";
+
 .image {
   width: 100%;
   margin-top: 2rem;
+}
+
+.prompt {
+  max-width: 650px;
+  margin: 0 auto 24px;
 }
 
 .image-container {
@@ -19,6 +26,11 @@
       border-radius: 5px;
     }
 
+    img {
+      max-height: 550px;
+      width: auto;
+    }
+
     .copy-btn {
       position: absolute;
       top: 0;
@@ -33,7 +45,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
       &:hover {
-        background: darken(#ccc, 10%);
+        background: color.scale(#ccc, $lightness: -10%);
       }
     }
   }

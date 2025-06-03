@@ -32,4 +32,18 @@ describe("Results component", () => {
     fireEvent.click(copyBtn);
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith(imgUrl);
   });
+
+  test("renders output prompt when outputPrompt prop is passed", () => {
+    const outputPrompt = "This is the output prompt";
+    const { getByTestId } = render(
+      <Results imgUrl={imgUrl} outputPrompt={outputPrompt} />
+    );
+    const outputPromptElement = getByTestId("outputPrompt");
+    expect(outputPromptElement).toHaveTextContent(outputPrompt);
+  });
+  test("does not render output prompt when outputPrompt prop is not passed", () => {
+    const { queryByTestId } = render(<Results imgUrl={imgUrl} />);
+    const outputPromptElement = queryByTestId("outputPrompt");
+    expect(outputPromptElement).not.toBeInTheDocument();
+  });
 });

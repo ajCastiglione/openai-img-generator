@@ -6,6 +6,7 @@ import "./App.scss";
 function App() {
   const [loading, setLoading] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
+  const [outputPrompt, setOutputPrompt] = useState("");
   const [msg, setMsg] = useState("");
 
   const submitHandler = async (prompt: string, size: string): Promise<void> => {
@@ -35,6 +36,7 @@ function App() {
       setImgUrl(data.data);
       setLoading(false);
       setMsg("");
+      setOutputPrompt(data.revised_prompt ?? "");
     } catch (err) {
       let message = "";
       console.log(err);
@@ -50,7 +52,7 @@ function App() {
       <Header />
       <main>
         <Form submit={submitHandler} />
-        <Results imgUrl={imgUrl} msg={msg} />
+        <Results imgUrl={imgUrl} msg={msg} outputPrompt={outputPrompt} />
       </main>
       <Spinner active={loading} />
     </>

@@ -6,7 +6,7 @@ import App from "./App";
 const fetchMock = fetch as FetchMock;
 const mockResolvedValue = {
   success: true,
-  data: "https://oaidalleapiprodscus.blob.core.windows.net/private/org-6NEDq6es8QJhhUWXLfT934xt/user-pAQftQdGUOnRHTw2bKb9GYna/img-ItMY54G6oHMMrzc54EmdYOUy.png?st=2023-02-06T00%3A53%3A13Z&se=2023-02-06T02%3A53%3A13Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-02-05T21%3A08%3A36Z&ske=2023-02-06T21%3A08%3A36Z&sks=b&skv=2021-08-06&sig=gmuEQehQEE3jJn5Mg5n7W%2B2hlIb9%2B5sonQPtXMxyZb8%3D",
+  data: "https://placehold.co/600x400",
 };
 
 beforeEach(() => {

@@ -4,7 +4,7 @@ import { ClipboardIcon } from "../../icons/Icons";
 import "./Results.scss";
 
 function Results(props: ResultProps) {
-  const { imgUrl, msg } = props;
+  const { imgUrl, msg, outputPrompt } = props;
   const inputRef = useRef<HTMLInputElement>(null);
 
   const copyToClipboard = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -24,6 +24,14 @@ function Results(props: ResultProps) {
           <h2 className="msg" data-testid="errorMessage">
             {msg}
           </h2>
+        )}
+        {outputPrompt && (
+          <div className="prompt" data-testid="outputPrompt">
+            <p>
+              <strong>How Dall-e-3 interpreted the request:</strong>
+            </p>
+            <p>{outputPrompt}</p>
+          </div>
         )}
         {imgUrl && (
           <>
