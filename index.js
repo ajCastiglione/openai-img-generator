@@ -26,4 +26,9 @@ if (process.env.NODE_ENV === "production") {
 
 app.use("/openai", require("./routes/openaiRoutes"));
 
+// Create a health check endpoint.
+app.get("/health-check", (req, res) => {
+  res.status(200).json({ status: "OK" });
+});
+
 app.listen(port, () => console.log(`Server running on port ${port}`));
